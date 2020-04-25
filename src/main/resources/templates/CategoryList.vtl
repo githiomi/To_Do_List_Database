@@ -1,0 +1,8 @@
+<h1>Here are all your categories</h1>
+<ol>
+  #foreach ($category in $categories)
+    <li style = "margin:10px;"><a href="/categories/$category.getId()"> <button class = "btn btn-warning"> $category.getName() </button> </a></li>
+  #end
+</ol>
+
+<a href="/categories/newCategory"> <button class = "btn btn-danger"> Add New Category </button> </a>

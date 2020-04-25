@@ -1,0 +1,32 @@
+<h3> Name of your category: <cite> $category.getName() </cite> </h3>
+
+<ul>
+    #foreach ( $task in $category.getChildTasks() )
+
+    <ol>
+
+            <p> <cite style = "font-family:Monospace; font-weight:bolder"> $task.getID().  $task.getName() </cite> </p>
+
+
+        <p> Task Description: $task.getDescription() </p>
+        <p> Task Details:
+        <ul>
+            <li> Day Created: $task.getDayCreated().getDayOfWeek() </li>
+            <li>
+                #if ( $task.getComplete() == true )
+                    Not Completed!
+                #else
+                    Completed!
+                #end
+            </li>
+        </ul>
+        <br>
+        <hr>
+    </ol>
+
+    #end
+</ul>
+
+<a href = "/categories/$category.getId()/tasks/new"> <button class = "btn btn-success"> Add a new task </button> </a>
+
+<a href = "/categories"> <button class = "btn btn-danger"> View All Categories </button> </a>

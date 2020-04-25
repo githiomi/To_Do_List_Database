@@ -1,0 +1,44 @@
+<h3 style = "font-weight:bolder;">Add a new Task to : "$category.getName()"</h3>
+
+<form action="/task" method = "post">
+
+  <input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
+
+  <label for="taskName">Task Name: </label>
+    <input id="taskName" name="taskName" type="text" style = "width:60%; margin:10px; padding:5px;">
+        <br>
+
+  <label for="description">Task Description: </label>
+    <input id="description" name="description" type="text" style = "width:60%; margin:10px; padding:5px;">
+        <br>
+
+  <button type="submit" class="btn btn-warning">Add task</button>
+
+</form>
+
+<!-- <h4><cite>Your tasks: </cite></h4>
+
+#if ($tasks)
+    <ol>
+      #foreach ( $task in $tasks ) <br> <hr>
+            <li> Task name: <cite style = "font-family:Monospace;"> $task.getName() </cite> </li>
+        <ul>
+             <li> <p> Your current task description is: <cite> $task.getDescription() </cite> </p> </li>
+             <li>    Created on : $task.getDayCreated().getDayOfWeek() </li>
+
+            #if ( $task.getComplete() )
+                <li style = 'font-weight:bolder;'> Completed! </li>
+            #else
+                <li style = 'font-weight:bolder;'> Not Completed! </li>
+            #end
+        </ul>
+
+      #end
+    </ol> <br> <hr>
+
+
+    #else
+        <p> No tasks! </p>
+
+#end
+-->
